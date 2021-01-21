@@ -68,3 +68,45 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Material Design UI
+Make sure to install the required packages for material-ui and its icons:
+
+`npm install @material-ui/core`
+`npm install @material-ui/icons`
+
+add these links into your index.html\
+`<head>...`\
+`<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"`
+
+`<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />`
+\
+`</head>`
+
+and make `'Roboto'` your default font into index.css
+
+Pay attention: the following dependencies are needed:
+`react >= 16.8.0` and `react-dom >= 16.8.0`
+
+### JSS
+
+JSS is used to make our JS components styling with CSS more organized
+
+
+### Personal observation about Material UI
+
+[Material Design](https://material.io) was created by Google to helps developers in creating web designs faster. The Material Design made for React is called Material UI.
+
+### Learning Trail
+
+Playlist React for Beginners (Youtube: Dev Ed)
+[https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=1](https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=1)
+
+15 projetos com React (Youtube: FreeCodeCamp)
+[https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=17138s](https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=17138s)
+
+ARTIGO: Integração do Material UI com ReactJS (RocketSeat)
+[https://blog.rocketseat.com.br/react-material-ui/](https://blog.rocketseat.com.br/react-material-ui/)
+
+Medal of Honor to:
+[https://stackoverflow.com/](https://stackoverflow.com/)
