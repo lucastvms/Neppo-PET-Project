@@ -2,6 +2,8 @@ import './App.css';
 import SideMenu from "../components/SideMenu";
 import {createMuiTheme, CssBaseline, makeStyles, MuiThemeProvider} from "@material-ui/core";
 import Header from "../components/Header";
+import PageHeader from "../components/PageHeader";
+import FaceIcon from '@material-ui/icons/Face';
 
 const theme = createMuiTheme({
     palette: {
@@ -15,8 +17,22 @@ const theme = createMuiTheme({
         },
         background: {
             default: "#f4f5fd"
+        },
+        shape: {
+            borderRadius: '10px'
         }
-
+    },
+    overrides: {
+        MuiAppBar: {
+            root: {
+                transform: 'translateZ(0)'
+            }
+        }
+    },
+    props: {
+        MuiIconButton: {
+            disableRipple:false
+        }
     }
 })
 
@@ -33,11 +49,16 @@ function App() {
     return (
         <>
             <MuiThemeProvider theme={theme}>
-                <SideMenu />
+                <SideMenu/>
                 <div className={classes.appMain}>
-                    <Header />
+                    <Header/>
+                    <PageHeader
+                        title="Page Header"
+                        subTitle="Page description"
+                        icon={<FaceIcon fontSize="large"/>}
+                    />
                 </div>
-                <CssBaseline />
+                <CssBaseline/>
             </MuiThemeProvider>
         </>
     );
