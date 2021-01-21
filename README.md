@@ -85,13 +85,12 @@ add these links into your index.html\
 
 and make `'Roboto'` your default font into index.css
 
-Pay attention: the following dependencies are needed:
+**Pay attention:** the following dependencies are needed:
 `react >= 16.8.0` and `react-dom >= 16.8.0`
 
 ### JSS
 
-JSS is used to make our JS components styling with CSS more organized
-
+JSS is used to make our JS components' styling with CSS more organized
 
 ### Personal observation about Material UI
 
@@ -99,14 +98,14 @@ JSS is used to make our JS components styling with CSS more organized
 
 ### Learning Trail
 
-Playlist React for Beginners (Youtube: Dev Ed)
+Playlist React Tutorial For Beginners (Youtube: Dev Ed)
 [https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=1](https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=1)
 
-15 projetos com React (Youtube: FreeCodeCamp)
+Code 15 React Projects - Complete Course (Youtube: FreeCodeCamp)
 [https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=17138s](https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=17138s)
 
-ARTIGO: Integração do Material UI com ReactJS (RocketSeat)
+ARTICLE: Integração do Material UI com ReactJS (RocketSeat)
 [https://blog.rocketseat.com.br/react-material-ui/](https://blog.rocketseat.com.br/react-material-ui/)
 
-Medal of Honor to:
+Honorable mention:
 [https://stackoverflow.com/](https://stackoverflow.com/)
