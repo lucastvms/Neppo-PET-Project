@@ -5,19 +5,19 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
 
-const useStyle = makeStyles({
+const useStyle = makeStyles(theme => ({
     root: {
         backgroundColor: '#fff'
     },
     searchInput: {
         opacity: '0.6',
-        padding: '0px 8px',
+        padding: `0px ${theme.spacing(1)}px`,
         fontSize: '0.8rem',
         '&:hover': {
             backgroundColor: '#f2f2f2'
         },
         '& .MuiSvgIcon-root': {
-            marginRight: '8px'
+            marginRight: theme.spacing(1)
         }
     },
     btnRoot:{
@@ -26,7 +26,7 @@ const useStyle = makeStyles({
     btnLabel:{
         backgroundColor: 'red'
     }
-})
+}))
 
 const Header = () => {
     const classes = useStyle();
