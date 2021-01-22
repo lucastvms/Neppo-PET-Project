@@ -5,7 +5,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
 
-const useStyle = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: '#fff',
     },
@@ -29,7 +29,7 @@ const useStyle = makeStyles(theme => ({
 }))
 
 const Header = () => {
-    const classes = useStyle();
+    const classes = useStyles();
 
     return (
         <div>

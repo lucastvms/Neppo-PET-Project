@@ -2,8 +2,7 @@ import './App.css';
 import SideMenu from "../components/SideMenu";
 import {createMuiTheme, CssBaseline, makeStyles, MuiThemeProvider} from "@material-ui/core";
 import Header from "../components/Header";
-import PageHeader from "../components/PageHeader";
-import FaceIcon from '@material-ui/icons/Face';
+import Articles from "../pages/Articles/Articles";
 
 const theme = createMuiTheme({
     palette: {
@@ -38,8 +37,8 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
     appMain: {
-        paddingLeft: '320px',
-        width: '100%'
+        paddingLeft: '240px',
+        width: '100%',
     }
 })
 
@@ -52,11 +51,8 @@ function App() {
                 <SideMenu/>
                 <div className={classes.appMain}>
                     <Header/>
-                    <PageHeader
-                        title="Page Header"
-                        subTitle="Page description"
-                        icon={<FaceIcon fontSize="large"/>}
-                    />
+
+                    <Articles />
                 </div>
                 <CssBaseline/>
             </MuiThemeProvider>
