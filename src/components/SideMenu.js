@@ -1,5 +1,6 @@
 import React from "react";
 import {withStyles} from "@material-ui/core";
+import image from "../images/logo-neppo.png";
 // import {makeStyles} from "@material-ui/core";
 
 const style = {
@@ -10,7 +11,7 @@ const style = {
         left: '0px',
         width: '240px',
         height: '100%',
-        backgroundColor: '#0F71B6'
+        backgroundColor: '#0F71B6',
     }
 }
 

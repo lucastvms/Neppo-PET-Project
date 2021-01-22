@@ -72,9 +72,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Material Design UI
 Make sure to install the required packages for material-ui and its icons:
 
-`npm install @material-ui/core`
-`npm install @material-ui/icons`
-`npm i @material-ui/pickers`
+`npm install @material-ui/core`\
+`npm install @material-ui/icons`\
+`npm i @material-ui/pickers`\
+`npm i @date-io/date-fns@1.x date-fns`\
+`npm install @material-ui/lab`
 
 add these links into your index.html\
 `<head>...`\

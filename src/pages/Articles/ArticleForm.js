@@ -1,91 +1,116 @@
-import React from "react";
-import {FormControl, FormControlLabel, Grid, InputLabel, MenuItem, Select, TextField, Checkbox} from "@material-ui/core";
-import {useForm, Form} from "../../components/useForm";
+import React, { useState, useEffect } from 'react'
+import { Grid, } from '@material-ui/core';
+import Controls from "../../components/controls/Controls";
+import { useForm, Form } from '../../components/useForm';
 import * as articleService from "../../services/articleService";
 
 
-const initialFieldValues = {
+const initialFValues = {
     id: 0,
     title: '',
     text: '',
-    author: '',
-    category: '',
-    date: new Date(),
-    isPermanent: false
+    categoryId: '',
+    expirationDate: new Date(),
+    isPermanent: true,
 }
 
-function ArticleForm() {
+export default function ArticleForm(props) {
+    const { addOrEdit, recordForEdit } = props
+
+    const validate = (fieldValues = values) => {
+        let temp = { ...errors }
+        if ('title' in fieldValues)
+            temp.title = fieldValues.title ? "" : "This field is required."
+        if ('text' in fieldValues)
+            temp.text = fieldValues.text ? "" : "This field is required."
+        if ('categoryId' in fieldValues)
+            temp.category = fieldValues.categoryId.length != 0 ? "" : "This field is required."
+        setErrors({
+            ...temp
+        })
+
+        if (fieldValues == values)
+            return Object.values(temp).every(x => x == "")
+    }
 
     const {
         values,
         setValues,
+        errors,
+        setErrors,
         handleInputChange,
-        handleCheckChange
-    } = useForm(initialFieldValues);
+        resetForm
+    } = useForm(initialFValues, true, validate);
 
-    const catOptions = articleService.getCategoryCollection();
+    const handleSubmit = e => {
+        e.preventDefault()
+        if (validate()) {
+            addOrEdit(values, resetForm);
+        }
+    }
 
+    useEffect(() => {
+        if (recordForEdit != null)
+            setValues({
+                ...recordForEdit
+            })
+    }, [recordForEdit])
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Grid container>
                 <Grid item xs={9}>
-                    <TextField
-                        variant="outlined"
-                        label="Title"
+                    <Controls.Input
                         name="title"
+                        label="Title"
                         value={values.title}
+                        rows={1}
                         onChange={handleInputChange}
+                        error={errors.title}
                     />
-                    <TextField
-                        multiline={true}
-                        rows={10}
+                    <Controls.Input
                         name="text"
-                        variant="outlined"
                         label="Text"
                         value={values.text}
+                        rows={10}
                         onChange={handleInputChange}
+                        error={errors.text}
                     />
-                    <TextField
-                        variant="outlined"
-                        label="Author"
-                        name="author"
-                        value={values.author}
-                        onChange={handleInputChange}
-                    />
+
                 </Grid>
-
                 <Grid item xs={3}>
-                    <InputLabel>Category</InputLabel>
-                    <Select
-                        variant="outlined"
-                        name="category"
+                    <Controls.Select
+                        name="categoryId"
                         label="Category"
-                        value={values.category}
+                        value={values.categoryId}
                         onChange={handleInputChange}
-                    >
-                        <MenuItem value={0}>General</MenuItem>
-                        {
-                            catOptions.map(
-                                item => (<MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)
-                            )
-                        }
-                    </Select>
+                        options={articleService.getCategoryCollection()}
+                        error={errors.categoryId}
+                    />
+                    <Controls.DatePicker
+                        name="expirationDate"
+                        label="Expiration Date"
+                        value={values.expirationDate}
+                        onChange={handleInputChange}
+                    />
+                    <Controls.Checkbox
+                        name="isPermanent"
+                        label="Permanent Article"
+                        value={values.isPermanent}
+                        onChange={handleInputChange}
+                    />
 
-                    <FormControl>
-                        <FormControlLabel
-                            control={<Checkbox
-                                name="isPermanent"
-                                color="primary"
-                                checked={values.isPermanent}
-                                onChange={handleCheckChange}
-                            />}
-                            label="Permanent Article"/>
-                    </FormControl>
+                    <div>
+                        <Controls.Button
+                            type="submit"
+                            text="Submit" />
+                        <Controls.Button
+                            text="Reset"
+                            color="default"
+                            onClick={resetForm} />
+                    </div>
                 </Grid>
             </Grid>
         </Form>
-    );
+    )
 }
-
-export default ArticleForm;
