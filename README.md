@@ -74,6 +74,7 @@ Make sure to install the required packages for material-ui and its icons:
 
 `npm install @material-ui/core`
 `npm install @material-ui/icons`
+`npm i @material-ui/pickers`
 
 add these links into your index.html\
 `<head>...`\
@@ -109,4 +110,6 @@ ARTICLE: Integração do Material UI com ReactJS (RocketSeat)
 
 Honorable mention:
 [https://stackoverflow.com/](https://stackoverflow.com/)
+[https://material-ui.com/](https://material-ui.com/)
 [https://cssinjs.org/?v=v10.5.0](https://cssinjs.org/?v=v10.5.0)
+[https://material-ui-pickers.dev/](https://material-ui-pickers.dev/)
